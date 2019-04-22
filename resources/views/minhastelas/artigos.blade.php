@@ -37,7 +37,7 @@
 					<td>{{ $artigo->titulo }}</td>
 					<td>{{ $artigo->link }}</td>
 					<td>
-						 <a href="{{  }}" class="btn btn-danger">Excluir</a>
+						 <a href="{{ route('excluir.artigo',$artigo->id) }}" class="btn btn-danger">Excluir</a>
 					</td>
 				</tr>	
 					@endforeach

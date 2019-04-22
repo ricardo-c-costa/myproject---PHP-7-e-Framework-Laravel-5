@@ -77,14 +77,10 @@ class DashboardController extends Controller
 			$crawler = $client->click($link);
 			$link = ($crawler->getUri());
 
-
-
-
 			$data_artigos = array(
 				'title' => $titulo[0],
 				'link' => $link,
 			);
-
 
 			$insert = Artigos::create([
 				'titulo' => $data_artigos['title'],
@@ -101,12 +97,9 @@ class DashboardController extends Controller
 		$artigos = Artigos::all();
 		return view('minhastelas.artigos', compact('artigos'));
 	}
-	public function ExcluirArtigo() 
+	public function ExcluirArtigo($toDelete) 
 	{
-		$toDelete = $artigo->id;
 		Artigos::where('id', $toDelete )->delete();
-
-
 		return redirect()->route('artigos');
 	}
 

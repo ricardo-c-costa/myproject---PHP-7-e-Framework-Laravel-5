@@ -25,7 +25,7 @@ Route::get('capturar', 'DashboardController@AuthSuccess')->name('capturar.logado
 Route::post('capturar', 'DashboardController@postCapturar')->name('capturar.send');
 // ARTIGOS ROUTES
 Route::get('artigos', 'DashboardController@getArtigos')->name('artigos');
-Route::get('excluirartigo', 'DashboardController@ExcluirArtigo')->name('excluir.artigo');
+Route::get('excluirartigo/{id}', ['as' => 'excluir.artigo', 'uses' => 'DashboardController@ExcluirArtigo']);
 // Route::resource('artigos', 'DashboardController@getArtigos')->name('artigos.show');
 
 
